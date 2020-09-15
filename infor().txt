@@ -1,7 +1,7 @@
-/*****************************************************************************************************************
-See how many schemas are in a database
+/**************************************************************************************************************
+Number of  Schemas in a Database
 *****************************************************************************************************************/
-USE [WideWorldImporters]
+USE [Database_Name]
 SELECT *
 FROM sys.schemas
 --name	schema_id	principal_id
@@ -18,17 +18,9 @@ IF OBJECT_ID('dbo.Scores', 'U') IS NOT NULL DROP TABLE dbo.Scores;
 IF OBJECT_ID('tempdb.dbo.#T', 'U') IS NOT NULL DROP TABLE #T; 
 
 /*****************************************************************************************************************
-Find all the CONSTRAINT column names and types then gather all columns in tables with a database
---SELECT * FROM sys.all_views
---SELECT * FROM sys.databases
---SELECT * FROM sys.columns
---SELECT * FROM sys.schemas
---SELECT * FROM sys.tables
---SELECT * FROM sys.columns
---SELECt * FROM sys.types 
-
+Find CONSTRAINT columns and DESCRIBE tables with a database
 *****************************************************************************************************************/
-USE [WideWorldImporters]
+USE [Database_Name]
 
 IF OBJECT_ID('tempdo.dob.#primary_key', 'U') IS NOT NULL DROP TABLE #primary_key
 SELECT 
@@ -70,3 +62,6 @@ ORDER BY ST.name ASC, SMA.name ASC
 
 
 
+USE [Database_Name]
+EXEC sp_help tablename
+exec sp_columns tablename
