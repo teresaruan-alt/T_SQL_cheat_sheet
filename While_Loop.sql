@@ -13,11 +13,11 @@ DECLARE @ProductKey INT  = 1
 
 --Set up the ending position of the loop, it's similar to "BREAK" in Python's while loop
 WHILE (@ProductKey <= 567) 
-BEGIN -- BLOCK OF CODES 
+BEGIN --use BEGIN AND END to group blocks of code into a session
 	IF @ProductKey IN (1, 123, 234, 567) --condition 
 		BEGIN 
 
-		---codes
+		---blocks of code
 		
 		END 
 	SET @ProductKey = @ProductKey +1  -- incremental
