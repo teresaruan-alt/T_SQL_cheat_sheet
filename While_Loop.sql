@@ -1,9 +1,9 @@
 
-/*********************************************************************************
-How to write a loop to append subset for different products 
+/**************************************************************************************
+how to leverage a while loop to simplify a query instead of writing multiple hash tables
 For Example: 
 we have product keys: 123, 234, 567
-*********************************************************************************/
+**************************************************************************************/
 
 USE [DATABASE_NAME]
 
