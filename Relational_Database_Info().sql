@@ -1,4 +1,4 @@
-/**************************************************************************************************************
+ /**************************************************************************************************************
 Number of  Schemas in a Database
 *****************************************************************************************************************/
 USE [Database_Name]
@@ -58,10 +58,12 @@ JOIN sys.types AS STP ON STP.system_type_id = SC.system_type_id
 LEFT JOIN #primary_key AS PKT ON PKT.TABLE_SCHEMA = SMA.name
                                  AND PKT.TABLE_NAME = ST.name
 								 AND PKT.COLUMN_NAME = SC.name
+--WHERE ST.name = '' --if you are looking for specific table in a database 
 ORDER BY ST.name ASC, SMA.name ASC
 
 
 
-USE [Database_Name]
+
+
 EXEC sp_help tablename
-exec sp_columns tablename
+EXEC sp_columns tablename
